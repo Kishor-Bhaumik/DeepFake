@@ -1,0 +1,17 @@
+Best Results -->
+
+XceptionNet:
+Epoch: 4 	Training Loss: 0.123300 	Validation Loss: 0.169794 
+Epoch: 4 	Training acc: 95.15 	Validation acc: 93.52 
+
+
+PyramidNet :
+
+Epoch: 11 	Training Loss: 0.013218 	Validation Loss: 0.037947 
+Epoch: 11 	Training acc: 99.59 	Validation acc: 98.76 
+
+
+Efnet :
+
+Epoch: 10 	Training Loss: 0.094920 	Validation Loss: 0.054949 
+Epoch: 10 	Training acc: 96.72 	Validation acc: 98.10 
