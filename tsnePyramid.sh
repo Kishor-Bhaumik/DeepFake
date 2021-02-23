@@ -1,3 +1,6 @@
+python TsnePyramidNet.py --choose_file train
+
+sleep 5
 python TsnePyramidNet.py --choose_file test
 
 sleep 5
