@@ -38,7 +38,6 @@ args = parser.parse_args()
 
 FILE_INPUT= args.choose_file
 
-FILE_INPUT= "test"
 device = torch.device("cuda" if torch.cuda.is_available() else cpu())
 BATCH_SIZE = 32
 num_class=2
