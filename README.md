@@ -7,7 +7,8 @@
 $ pip install -r requirements.txt
 ```
 * Download dataset 
-Data can be downloaded [here](https://www.kaggle.com/c/ads5035-01/data) . Click on ** Download All ** and download ads5035-01.zip.
+
+> Data can be downloaded [here](https://www.kaggle.com/c/ads5035-01/data) . Click on **Download All** and download ads5035-01.zip .
 
 * Extract zip file and move to _data_ directory 
 
@@ -66,7 +67,7 @@ $ python GradCamPyramidNet.py --choose_file test --Num_img 5
 ```bash
 $ python GradCamXception.py --choose_file test --Num_img 5
 ```
-
+* Images will be saved in Gradcam_Image directory
 
 ## T-SNE Visualization 
 
@@ -84,5 +85,6 @@ $ bash tsnePyramid.sh
 ```bash
 $ bash tsneXcep.sh
 ```
+* Images will saved in Tsne_Image directory
 
 * Trained model can be downloaded from [here](https://drive.google.com/file/d/1StmCTnZkU52CZJ7ZLsKhx3aRBWvesg8H/view?usp=sharing)
