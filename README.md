@@ -34,6 +34,8 @@ $ python pyramid.py
 $ python xception.py
 ```
 
+* Training outputs are saved as _effnetOutput.txt_ , _pyramidOutput.txt_ and _xceptionOutput.txt_ for  EfficientNet , PyramidNet and XceptionNet respectively .
+
 ## Predict from test data and make submission files
 
 * EfficientNet 
