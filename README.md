@@ -8,7 +8,7 @@ $ pip install -r requirements.txt
 ```
 * Download dataset 
 
-> Data can be downloaded [here](https://www.kaggle.com/c/ads5035-01/data) . Click on **Download All** and download ads5035-01.zip .
+> Data can be downloaded from [here](https://www.kaggle.com/c/ads5035-01/data) . Click on **Download All** and download ads5035-01.zip .
 
 * Extract zip file and move to _data_ directory 
 
