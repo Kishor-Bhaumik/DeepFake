@@ -101,17 +101,17 @@ if "validation" in FILE_INPUT:
     
 
 if "train" in root_path:
-    save_path ="Gradcam_Image/XceptionNemt/train"
+    save_path ="Gradcam_Image/XceptionNet/train"
     _data = ImageFolderWithPaths(root = root_path, transform = train_transforms)
     
 if "test" in root_path: 
-    save_path ="Gradcam_Image/XcptionNemt/test"
+    save_path ="Gradcam_Image/XcptionNet/test"
     _data = ImageFolderWithPaths(root = root_path, transform = train_transforms)
 
 if "validation" in root_path: 
-    save_path ="Gradcam_Image/XceptionNemt/val"
+    save_path ="Gradcam_Image/XceptionNet/val"
     _data = ImageFolderWithPaths(root = root_path, transform = train_transforms)
-    
+  
 
 BATCH_SIZE = 1
 
