@@ -36,7 +36,7 @@ FILE_INPUT= args.choose_file
 device = torch.device("cuda" if torch.cuda.is_available() else cpu())
 BATCH_SIZE = 16
 num_class=2
-
+pic_size =224
 model = ptcv_get_model("pyramidnet101_a360", pretrained=True)
 num_ftrs = model.output.in_features
 model.output = nn.Linear(num_ftrs, num_class)
@@ -72,9 +72,51 @@ class ImageFolderWithPaths(torchvision.datasets.ImageFolder):
         
         return tuple_with_path
 
-train_transforms= transforms.Compose([transforms.CenterCrop((224,224)), transforms.ToTensor(),
-                            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
+
+
+def get_mean_std(folder):
+ 
+    means = torch.zeros(3)
+    stds = torch.zeros(3)
+
+    _data = datasets.ImageFolder(root = folder,transform = transforms.ToTensor())
+    data_len = len(_data)
+
+    for img, label in _data:
+        means += torch.mean(img, dim = (1,2))
+        stds += torch.std(img, dim = (1,2))
+
+    means /= data_len
+    stds /= data_len
+    
+    return means, stds
+    
+# train_means , train_stds = get_mean_std('data/train')
+# val_means , val_stds = get_mean_std('data/validation')
+# test_means, test_stds = get_mean_std('data/test')
+train_means , train_stds = (0.3673, 0.4058, 0.5365),(0.1741, 0.1814, 0.2284)
+val_means , val_stds     = (0.3440, 0.3894, 0.519),(0.1676, 0.1832, 0.2340)
+test_means, test_stds= (0.3604, 0.3993, 0.5377), (0.1755, 0.1858, 0.2364)
+
+
+train_transforms = transforms.Compose([
+                           transforms.Scale(pic_size),
+                           transforms.ToTensor(),
+                           transforms.Normalize(mean = train_means, 
+                                                std = train_stds) ])
+
+val_transforms = transforms.Compose([
+                           transforms.Scale(pic_size),
+                           transforms.ToTensor(),
+                           transforms.Normalize(mean = val_means, 
+                                                std = val_stds) ])    
+
+test_transforms = transforms.Compose([
+                           transforms.Scale(pic_size),
+                           transforms.ToTensor(),
+                           transforms.Normalize(mean = test_means, 
+                                                std = test_means) ])
 
 if "test" in FILE_INPUT:
     root_path ='data/test'
@@ -87,17 +129,18 @@ if "validation" in FILE_INPUT:
     
 
 if "train" in root_path:
-    save_path ="Tsne_Image/PyramidNet/train"
+    save_path ="Tsne_Image/efficientNemt/train"
     _data = ImageFolderWithPaths(root = root_path, transform = train_transforms)
     
 if "test" in root_path: 
-    save_path ="Tsne_Image/PyramidNet/test"
-    _data = ImageFolderWithPaths(root = root_path, transform = train_transforms)
+    save_path ="Tsne_Image/efficientNemt/test"
+    _data = ImageFolderWithPaths(root = root_path, transform = test_transforms)
 
 if "validation" in root_path: 
-    save_path ="Tsne_Image/PyramidNet/val"
-    _data = ImageFolderWithPaths(root = root_path, transform = train_transforms)
+    save_path ="Tsne_Image/efficientNemt/val"
+    _data = ImageFolderWithPaths(root = root_path, transform = val_transforms)
     
+
 
 
 data_loader = torch.utils.data.DataLoader(_data, 

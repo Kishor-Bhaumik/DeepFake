@@ -31,7 +31,7 @@ FILE_INPUT= args.choose_file
 NUM_IMAGE= args.Num_img
 device = torch.device("cuda" if torch.cuda.is_available() else cpu())
 num_class=2
-
+pic_size =224
 
 model = ptcv_get_model("pyramidnet101_a360", pretrained=True)
 num_ftrs = model.output.in_features

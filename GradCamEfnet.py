@@ -34,7 +34,7 @@ args = parser.parse_args()
 FILE_INPUT= args.choose_file
 NUM_IMAGE= args.Num_img
 device = torch.device("cuda" if torch.cuda.is_available() else cpu())
-
+pic_size =224
 num_class=2
 
 def get_model(NUM_CLASSES):

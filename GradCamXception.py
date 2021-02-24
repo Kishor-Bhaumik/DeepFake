@@ -31,7 +31,7 @@ FILE_INPUT= args.choose_file
 NUM_IMAGE= args.Num_img
 
 device = torch.device("cuda" if torch.cuda.is_available() else cpu())
-
+pic_size =224
 model_name = 'xception' # could be fbresnet152 or inceptionresnetv2
 model = pretrainedmodels.__dict__[model_name]()
 num_ftrs = model.last_linear.in_features
