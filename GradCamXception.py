@@ -144,15 +144,15 @@ if "validation" in FILE_INPUT:
     
 
 if "train" in root_path:
-    save_path ="Gradcam_Image/efficientNemt/train"
+    save_path ="Gradcam_Image/XceptionNet/train"
     _data = ImageFolderWithPaths(root = root_path, transform = train_transforms)
     
 if "test" in root_path: 
-    save_path ="Gradcam_Image/efficientNemt/test"
+    save_path ="Gradcam_Image/XceptionNet/test"
     _data = ImageFolderWithPaths(root = root_path, transform = test_transforms)
 
 if "validation" in root_path: 
-    save_path ="Gradcam_Image/efficientNemt/val"
+    save_path ="Gradcam_Image/XceptionNet/val"
     _data = ImageFolderWithPaths(root = root_path, transform = val_transforms)
     
 
