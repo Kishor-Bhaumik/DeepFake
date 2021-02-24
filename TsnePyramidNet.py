@@ -129,15 +129,15 @@ if "validation" in FILE_INPUT:
     
 
 if "train" in root_path:
-    save_path ="Tsne_Image/efficientNemt/train"
+    save_path ="Tsne_Image/PyramidNet/train"
     _data = ImageFolderWithPaths(root = root_path, transform = train_transforms)
     
 if "test" in root_path: 
-    save_path ="Tsne_Image/efficientNemt/test"
+    save_path ="Tsne_Image/PyramidNet/test"
     _data = ImageFolderWithPaths(root = root_path, transform = test_transforms)
 
 if "validation" in root_path: 
-    save_path ="Tsne_Image/efficientNemt/val"
+    save_path ="Tsne_Image/PyramidNet/val"
     _data = ImageFolderWithPaths(root = root_path, transform = val_transforms)
     
 
