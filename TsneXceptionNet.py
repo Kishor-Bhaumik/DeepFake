@@ -42,7 +42,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else cpu())
 BATCH_SIZE = 32
 num_class=2
 
-
+pic_size =224
 model_name = 'xception' # could be fbresnet152 or inceptionresnetv2
 model = pretrainedmodels.__dict__[model_name]()
 num_ftrs = model.last_linear.in_features
