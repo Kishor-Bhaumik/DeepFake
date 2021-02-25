@@ -36,7 +36,7 @@ pic_size =224
 model = ptcv_get_model("pyramidnet101_a360", pretrained=True)
 num_ftrs = model.output.in_features
 model.output = nn.Linear(num_ftrs, num_class)
-model.load_state_dict(torch.load('model_pyramid.pt'))
+model.load_state_dict(torch.load('model_pyramid.pt',map_location='cuda'))
 model= model.to(device)
 
 

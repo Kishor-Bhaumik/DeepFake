@@ -76,7 +76,7 @@ model = ptcv_get_model("pyramidnet101_a360", pretrained=True)
 num_ftrs = model.output.in_features
 model.output = nn.Linear(num_ftrs, 2)
 model= model.to(device)
-model.load_state_dict(torch.load("model_pyramid.pt"))
+model.load_state_dict(torch.load("model_pyramid.pt",map_location='cuda'))
 
 batch_len = BATCH_SIZE
 IMAGE =[]

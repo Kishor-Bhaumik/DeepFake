@@ -77,7 +77,7 @@ num_ftrs = model.last_linear.in_features
 
 model.last_linear = nn.Linear(num_ftrs, 2)
 model = model.to(device)
-model.load_state_dict(torch.load("model_xception.pt"))
+model.load_state_dict(torch.load("model_xception.pt",map_location='cuda'))
 
 batch_len = BATCH_SIZE
 IMAGE =[]

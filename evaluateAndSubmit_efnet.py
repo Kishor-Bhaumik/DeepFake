@@ -32,7 +32,7 @@ BATCH_SIZE =64
 model = get_model(num_class)
 device = torch.device("cuda" if torch.cuda.is_available() else cpu())
 model = model.to(device)
-model.load_state_dict(torch.load('model_efnetb0.pt'))
+model.load_state_dict(torch.load('model_efnetb0.pt',map_location='cuda'))
 
 
 def get_mean_std(folder):

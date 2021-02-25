@@ -46,7 +46,7 @@ def get_model(NUM_CLASSES):
     
 model = get_model(num_class)
 model = model.to(device)
-model.load_state_dict(torch.load('model_efnetb0.pt'))
+model.load_state_dict(torch.load('model_efnetb0.pt',map_location='cuda'))
     
 
 class ENET(nn.Module):
