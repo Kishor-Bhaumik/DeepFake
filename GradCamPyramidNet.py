@@ -131,14 +131,6 @@ test_transforms = transforms.Compose([
                            transforms.Normalize(mean = test_means, 
                                                 std = test_means) ])
 
-if "test" in FILE_INPUT:
-    root_path ='data/test'
-    
-if "train" in FILE_INPUT:
-    root_path ='data/train'
-    
-if "validation" in FILE_INPUT:
-    root_path ='data/validation'
     
 
 if "test" in FILE_INPUT:
